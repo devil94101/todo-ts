@@ -34,7 +34,7 @@ const AddTodo = ({ setOpen }: Props) => {
 
   const createTodo = () => {
 
-    if (!title && !desc) {
+    if (!title || !desc) {
       setErrorMessage("Title and Descriptions is mandatory")
       return
     }

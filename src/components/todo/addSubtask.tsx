@@ -36,7 +36,7 @@ const AddTodoSubtask = ({ setOpen, data, idx }: Props) => {
 
     const createTodoSubask = () => {
 
-        if (!title && !desc) {
+        if (!title || !desc) {
             setErrorMessage("Title and Descriptions is mandatory")
             return
           }
