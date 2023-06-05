@@ -1,0 +1,44 @@
+.searchBarStyles{
+    background-color: rgb(241, 245, 249);
+    border-radius: 0.5rem;
+    color: rgb(71 85 105/1);
+    outline-color: transparent;
+    padding: 1rem;
+    font-size: 1.2rem;
+    outline: none;
+    border: 2px solid rgb(241 245 249/1);
+}
+
+.searchBarStyles:focus, .searchBarStyles:hover {
+    border: 2px solid#7c3AED;
+    outline: none;
+}
+
+.inputSearchBarConainer{
+    position: relative;
+}
+
+.iconPosition {
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    color:rgb(71 85 105/1);
+}
+
+.searchModal{
+    position: absolute;
+    max-height: 35vh;
+    background-color: #f1f4f9;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 0.3rem;
+    z-index: 1000;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.search-li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}

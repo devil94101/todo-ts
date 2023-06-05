@@ -1,0 +1,14 @@
+.subtaskmodal{
+    width: 50vw;
+    height: 90vh;
+    background-color: #e2e8f0;
+    padding: 2rem;
+    position: relative;
+    overflow-y: auto;
+}
+.subtaskviewcont{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    align-items: center;
+}

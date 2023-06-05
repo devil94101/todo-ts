@@ -1,0 +1,13 @@
+
+.btnStyles{
+    background-color: #7c3AED;
+    color: rgb(248, 250, 252);
+    font-size: 0.9rem;
+    line-height: 24px;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}

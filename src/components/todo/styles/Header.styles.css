@@ -1,0 +1,15 @@
+.headerContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+    height: 15%;
+
+}
+
+.textStyle{
+    color: #475569;
+    font-size: 16px;
+    line-height: 24px;
+}
