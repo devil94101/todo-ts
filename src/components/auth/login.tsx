@@ -14,8 +14,11 @@ const Login = () => {
 
     const [email, setEmail] = useState("sample1@gmail.com")
     const [password, setPassword] = useState("1001")
+    const [error, setError] = useState(null)
 
     const login = () => {
+
+        setError(null)
 
         axios.post('/auth/login', {
             email,
@@ -26,6 +29,9 @@ const Login = () => {
             localStorage.setItem("userDetails", JSON.stringify(res.data.data))
             navigate(from)
         }).catch(Err => {
+
+            let message = Err?.response?.data?.message || Err.message
+            setError(message)
             console.log(Err)
         })
 
@@ -43,6 +49,7 @@ const Login = () => {
                 <div>
                     <input className='logininput' type="password" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
+                {error && <p className='textStyle' style={{color:'red',fontSize:'0.8rem'}}>{error}</p>}
                 <button className='loginbutton' onClick={login}>Login</button>
             </div>
         </div>
