@@ -57,11 +57,7 @@ const TodoData = ({ data, setSelectedIdx, setEditTodo, setCreateSubtask, setShow
     }
 
     return (
-        <div className='display-todo-cont class-group-for-grid' onClick={(e: React.MouseEvent) => {
-            e.stopPropagation()
-            setSelectedIdx()
-            setShowTodo(true)
-        }}>
+        <div className='display-todo-cont class-group-for-grid' >
             <div>
                 <p className='textstyles' style={{
                     fontWeight: '500',
@@ -145,13 +141,17 @@ const TodoData = ({ data, setSelectedIdx, setEditTodo, setCreateSubtask, setShow
             </div>
 
             <div>
-                <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <p onClick={(e: React.MouseEvent) => {
+                    e.stopPropagation()
+                    setSelectedIdx()
+                    setShowTodo(true)
+                }} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     Click to see Subtasks....
 
                 </p>
 
             </div>
-            
+
 
             <BasicModal open={deletePopUp} setOpen={setDeletePopUp}>
                 <div className='deletePopupModal'>

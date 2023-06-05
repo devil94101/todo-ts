@@ -2,6 +2,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { ITodo } from '../../types/todo.types'
+import AlertComponents from '../common/components/Alert'
 import Button from '../common/components/button'
 import CustomDesc from '../common/components/description'
 import CustomInput from '../common/components/input'
@@ -21,10 +22,24 @@ const AddTodoSubtask = ({ setOpen, data, idx }: Props) => {
     const [desc, setDesc] = useState('')
     const [isImp, setIsImp] = useState(false)
     const [completed, setCompleted] = useState(false)
-
+    const [error, setError] = useState<string | null>(null);
     const { todoData, setTodoData, setUpdateData } = useTodo()
 
+
+    const setErrorMessage = (msg: string) => {
+        setError(msg)
+        setTimeout(() => {
+          setError(null)
+        }, 2000)
+      }
+    
+
     const createTodoSubask = () => {
+
+        if (!title && !desc) {
+            setErrorMessage("Title and Descriptions is mandatory")
+            return
+          }
 
         let newSubtask = [...data.subtask, {
             title,
@@ -49,6 +64,7 @@ const AddTodoSubtask = ({ setOpen, data, idx }: Props) => {
 
     return (
         <div className='modalStyles'>
+             {error && <AlertComponents alertType='error' message={error} />}
             <div className='addtodo-header'>
 
                 <p className='textStyle' style={{
